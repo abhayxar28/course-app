@@ -73,7 +73,7 @@ export const signOutUser = asyncHandler(async (_req, res) => {
 
 
 export const getCurrentUserProfile = asyncHandler(async(req, res)=>{
-    const user = await User.findById(req.userId).select("-password")
+    const user = await User.findById(req.userId).select("-password");
 
     if(!user){
         return res.status(400).json({message: "User not present"})
